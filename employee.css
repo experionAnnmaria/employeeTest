@@ -1,0 +1,32 @@
+.topDetails
+{
+    padding-top: 20px;
+}
+.details
+{
+    background-color: azure;
+
+}
+
+table
+{
+    border: 1px solid black;
+    width: 80%;
+    height: 50px;
+}
+
+th
+{
+    border: 1px solid black;
+    text-align: center;
+}
+
+td
+{
+    border: 1px solid black;
+    text-align: left;
+}
+
+.errorMessage{
+color: red;
+}

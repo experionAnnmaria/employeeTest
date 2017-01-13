@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel= "stylesheet" href="bootstrap.min.css">
+    <link rel= "stylesheet" href="employee.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js"></script>
+    <link rel= "stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.css">
+    <script src="employee.js"></script>
+    <title>E-Pay</title>
+</head>
+<body>
+    
+    <form class="container" id="form1">
+        <br>            <br>
+        <div class="container">  
+            <fieldset>
+                <legend>Registered Members</legend>
+                <table id="tab"> 
+                    <tr>
+                        <th> Employee ID </th>
+                        <th> Employee Name</th>
+                        <th> Designation </th>
+                        <th> Salary </th>
+                        <th> Action </th>
+                        <th> Delete </th>
+                    </tr>
+                </table>
+            </fieldset>
+        </div>
+    </form>
+     
+    <br>            <br>            <br>            <br>
+    
+        <fieldset>
+            <legend>Employee Details</legend>
+            <button class="btn btn-default" id="new" type="reset">NEW</button> 
+            <form class="form-horizontal" id="form1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-6 col-sm-7  col-xs-8">
+                            <div class="row status">
+                                <div class="col-sm-5">
+                                    <label for="EmpID" class=" col-form-label">Employee ID :</label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input class="form-control" disabled type="text" id="empId" name="empId" placeholder="Enter Employee ID" required>
+                                </div>
+                                <div class="col-sm-3">
+                                    <span class="errorMessage" id=idError></span>
+                                </div>
+                            </div>
+                            <div class="row status">
+                                <div class="col-sm-5">
+                                    <label for="EmpName" class=" col-form-label">Employee Name :</label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input class="form-control" disabled type="text" id="name" name="name" placeholder="Enter Employee Name" required>
+                                </div>
+                                <div class="col-sm-3">
+                                    <span class="errorMessage" id=nameError></span>
+                                </div>
+                            </div>                                
+                            <div class="row status">
+                                <div class="col-sm-5">
+                                    <label for="Designation" class=" col-form-label">Employee Designation :</label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input class="form-control" disabled type="text" id="designation" name="designation" placeholder="Enter Employee Designation" required>
+                                </div><div class="col-sm-3">
+                                    <span class="errorMessage" id=designationError></span>
+                                </div>
+                            </div>
+                            <div class="row status">
+                                <div class="col-sm-5">
+                                    <label for="BasicPay" class=" col-form-label">Basic Pay:</label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input class="form-control pay" disabled type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' id="basicPay" name="basicPay" placeholder="Enter Basic Pay" required>
+                                </div><div class="col-sm-3">
+                                    <span class="errorMessage" id=basicPayError></span>
+                                </div>
+                            </div>
+                            <div class="row status">
+                                <div class="col-sm-5">
+                                    <label for="DailyAllowance" class=" col-form-label">Daily Allowance:</label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input class="form-control pay" disabled type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' id="dailyAllowance" name="dailyAllowance" placeholder="Enter Daily Allowance" required>
+                                </div>
+                                <div class="col-sm-3">
+                                    <span class="errorMessage" id=dailyAllowanceError></span>
+                                </div>
+                            </div>
+                            <div class="row status">
+                                <div class="col-sm-5">
+                                     <label for="houseRentAllowance" class=" col-form-label">House Rent Allowance:</label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input class="form-control pay" disabled type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' id="hrAllowance" name="hrAllowance" placeholder="Enter House Rent Allowance" required>
+                                </div>
+                                <div class="col-sm-3">
+                                    <span class="errorMessage" id=houseRentAllowanceError></span>
+                                </div>
+                            </div>
+                            <div class="row status">
+                                <div class="col-sm-5">
+                                    <label for="medAllowance" class=" col-form-label">Medical Allowance:</label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input class="form-control pay" disabled type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' id="medAllowance" name="medAllowance" placeholder="Enter Medical Allowance" required>
+                                </div>
+                                <div class="col-sm-3">
+                                    <span class="errorMessage" id=medicalAllowanceError></span>
+                                </div>
+                            </div>
+                            <div class="row status">
+                                <div class="col-sm-5">
+                                    <label for="totSalary"class=" col-form-label">Total Salary:</label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input class="form-control" readonly type="text" id="salary" name="salary" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                
+
+             <p> <br> <button class="btn btn-default" id="save" type="button">SUBMIT</button> <span>    
+             <button class="btn btn-default" id="cancel" type="reset">CANCEL</button> </span> </p>      
+            </form>     
+        </fieldset>
+            
+
+
+        <div class="row">
+                <div id="dialog-1" >Saved successfully.
+                </div>
+            </div>
+
+    
+
+</body>
+</html>
+<!--    
+
+-->
